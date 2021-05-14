@@ -18,6 +18,7 @@ namespace TFAragon
         {
             InitializeComponent();
         }
+        /*Sentencias sql*/
         static string conn = "SERVER = b6uzer3uyljskeemi0nr-mysql.services.clever-cloud.com; PORT=3306;DATABASE=b6uzer3uyljskeemi0nr;UID=uxbxj6okoaaumlr0;PWD=tZ5XuHvRCMFXxppdCXIU;";
         MySqlConnection cn = new MySqlConnection(conn);
         MySqlCommand cmd = new MySqlCommand();
