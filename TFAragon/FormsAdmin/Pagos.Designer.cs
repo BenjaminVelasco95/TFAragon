@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.barDesplazamiento = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtgPagos = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbIC = new System.Windows.Forms.ComboBox();
+            this.cbIE = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -56,14 +59,13 @@
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.cbIE = new System.Windows.Forms.ComboBox();
-            this.cbIC = new System.Windows.Forms.ComboBox();
+            this.dtgPagos = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDesplazamiento)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgPagos)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPagos)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -125,15 +127,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cobros Realizados";
             // 
-            // dtgPagos
-            // 
-            this.dtgPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPagos.Location = new System.Drawing.Point(6, 17);
-            this.dtgPagos.Name = "dtgPagos";
-            this.dtgPagos.Size = new System.Drawing.Size(664, 266);
-            this.dtgPagos.TabIndex = 0;
-            this.dtgPagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPagos_CellContentClick);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cbIC);
@@ -158,6 +151,22 @@
             this.groupBox2.Size = new System.Drawing.Size(676, 120);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
+            // 
+            // cbIC
+            // 
+            this.cbIC.FormattingEnabled = true;
+            this.cbIC.Location = new System.Drawing.Point(276, 38);
+            this.cbIC.Name = "cbIC";
+            this.cbIC.Size = new System.Drawing.Size(123, 23);
+            this.cbIC.TabIndex = 46;
+            // 
+            // cbIE
+            // 
+            this.cbIE.FormattingEnabled = true;
+            this.cbIE.Location = new System.Drawing.Point(147, 40);
+            this.cbIE.Name = "cbIE";
+            this.cbIE.Size = new System.Drawing.Size(123, 23);
+            this.cbIE.TabIndex = 45;
             // 
             // txtDescripcion
             // 
@@ -359,21 +368,38 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // cbIE
+            // dtgPagos
             // 
-            this.cbIE.FormattingEnabled = true;
-            this.cbIE.Location = new System.Drawing.Point(147, 40);
-            this.cbIE.Name = "cbIE";
-            this.cbIE.Size = new System.Drawing.Size(123, 23);
-            this.cbIE.TabIndex = 45;
-            // 
-            // cbIC
-            // 
-            this.cbIC.FormattingEnabled = true;
-            this.cbIC.Location = new System.Drawing.Point(276, 38);
-            this.cbIC.Name = "cbIC";
-            this.cbIC.Size = new System.Drawing.Size(123, 23);
-            this.cbIC.TabIndex = 46;
+            this.dtgPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgPagos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgPagos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.dtgPagos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgPagos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgPagos.ColumnHeadersHeight = 25;
+            this.dtgPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgPagos.EnableHeadersVisualStyles = false;
+            this.dtgPagos.GridColor = System.Drawing.Color.LightSeaGreen;
+            this.dtgPagos.Location = new System.Drawing.Point(6, 22);
+            this.dtgPagos.Name = "dtgPagos";
+            this.dtgPagos.RowHeadersVisible = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 9.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgPagos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgPagos.Size = new System.Drawing.Size(664, 261);
+            this.dtgPagos.TabIndex = 2;
+            this.dtgPagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPagos_CellContentClick);
             // 
             // Pagos
             // 
@@ -401,9 +427,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDesplazamiento)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgPagos)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPagos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,7 +442,6 @@
         private System.Windows.Forms.PictureBox cerrar;
         private System.Windows.Forms.PictureBox barDesplazamiento;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dtgPagos;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label9;
@@ -440,5 +465,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ComboBox cbIC;
         private System.Windows.Forms.ComboBox cbIE;
+        public System.Windows.Forms.DataGridView dtgPagos;
     }
 }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtClaveacceso = new System.Windows.Forms.TextBox();
@@ -41,8 +43,6 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtIC = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.cerrar = new System.Windows.Forms.PictureBox();
@@ -52,11 +52,15 @@
             this.btnMod = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dtgCliente = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDesplazamiento)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -73,12 +77,10 @@
             this.groupBox2.Controls.Add(this.txtApellido);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtNombre);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtIC);
             this.groupBox2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(12, 59);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(526, 179);
+            this.groupBox2.Size = new System.Drawing.Size(526, 129);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             // 
@@ -87,7 +89,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(261, 111);
+            this.label7.Location = new System.Drawing.Point(132, 67);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 15);
             this.label7.TabIndex = 41;
@@ -95,7 +97,7 @@
             // 
             // txtClaveacceso
             // 
-            this.txtClaveacceso.Location = new System.Drawing.Point(264, 131);
+            this.txtClaveacceso.Location = new System.Drawing.Point(135, 87);
             this.txtClaveacceso.Name = "txtClaveacceso";
             this.txtClaveacceso.PasswordChar = '*';
             this.txtClaveacceso.Size = new System.Drawing.Size(123, 23);
@@ -106,7 +108,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(132, 111);
+            this.label4.Location = new System.Drawing.Point(3, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 15);
             this.label4.TabIndex = 39;
@@ -114,7 +116,7 @@
             // 
             // txtNUsuario
             // 
-            this.txtNUsuario.Location = new System.Drawing.Point(135, 131);
+            this.txtNUsuario.Location = new System.Drawing.Point(6, 87);
             this.txtNUsuario.Name = "txtNUsuario";
             this.txtNUsuario.Size = new System.Drawing.Size(123, 23);
             this.txtNUsuario.TabIndex = 38;
@@ -124,7 +126,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 111);
+            this.label6.Location = new System.Drawing.Point(390, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 15);
             this.label6.TabIndex = 37;
@@ -132,7 +134,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(6, 131);
+            this.txtDireccion.Location = new System.Drawing.Point(393, 39);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(123, 23);
             this.txtDireccion.TabIndex = 36;
@@ -142,7 +144,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(390, 31);
+            this.label5.Location = new System.Drawing.Point(261, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 15);
             this.label5.TabIndex = 35;
@@ -150,7 +152,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(393, 51);
+            this.txtTelefono.Location = new System.Drawing.Point(264, 39);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(123, 23);
             this.txtTelefono.TabIndex = 34;
@@ -160,7 +162,7 @@
             this.labelapellido.AutoSize = true;
             this.labelapellido.BackColor = System.Drawing.Color.Transparent;
             this.labelapellido.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelapellido.Location = new System.Drawing.Point(261, 31);
+            this.labelapellido.Location = new System.Drawing.Point(132, 19);
             this.labelapellido.Name = "labelapellido";
             this.labelapellido.Size = new System.Drawing.Size(63, 15);
             this.labelapellido.TabIndex = 33;
@@ -168,7 +170,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(264, 51);
+            this.txtApellido.Location = new System.Drawing.Point(135, 39);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(123, 23);
             this.txtApellido.TabIndex = 32;
@@ -178,7 +180,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(132, 31);
+            this.label2.Location = new System.Drawing.Point(3, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 15);
             this.label2.TabIndex = 31;
@@ -186,28 +188,10 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(135, 51);
+            this.txtNombre.Location = new System.Drawing.Point(6, 39);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(123, 23);
             this.txtNombre.TabIndex = 30;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 15);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "IC";
-            // 
-            // txtIC
-            // 
-            this.txtIC.Location = new System.Drawing.Point(6, 51);
-            this.txtIC.Name = "txtIC";
-            this.txtIC.Size = new System.Drawing.Size(123, 23);
-            this.txtIC.TabIndex = 0;
             // 
             // label3
             // 
@@ -264,7 +248,7 @@
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Location = new System.Drawing.Point(544, 59);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(144, 179);
+            this.groupBox1.Size = new System.Drawing.Size(144, 129);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             // 
@@ -274,7 +258,7 @@
             this.btnDell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDell.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
             this.btnDell.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnDell.Location = new System.Drawing.Point(34, 142);
+            this.btnDell.Location = new System.Drawing.Point(34, 81);
             this.btnDell.Name = "btnDell";
             this.btnDell.Size = new System.Drawing.Size(75, 25);
             this.btnDell.TabIndex = 54;
@@ -288,7 +272,7 @@
             this.btnMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMod.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
             this.btnMod.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnMod.Location = new System.Drawing.Point(34, 86);
+            this.btnMod.Location = new System.Drawing.Point(34, 50);
             this.btnMod.Name = "btnMod";
             this.btnMod.Size = new System.Drawing.Size(75, 25);
             this.btnMod.TabIndex = 55;
@@ -302,7 +286,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAdd.Location = new System.Drawing.Point(34, 27);
+            this.btnAdd.Location = new System.Drawing.Point(34, 19);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 25);
             this.btnAdd.TabIndex = 56;
@@ -324,12 +308,57 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dtgCliente);
+            this.groupBox3.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox3.Location = new System.Drawing.Point(12, 194);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(676, 141);
+            this.groupBox3.TabIndex = 55;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Clientes";
+            // 
+            // dtgCliente
+            // 
+            this.dtgCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.dtgCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgCliente.ColumnHeadersHeight = 25;
+            this.dtgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgCliente.EnableHeadersVisualStyles = false;
+            this.dtgCliente.GridColor = System.Drawing.Color.LightSeaGreen;
+            this.dtgCliente.Location = new System.Drawing.Point(6, 22);
+            this.dtgCliente.Name = "dtgCliente";
+            this.dtgCliente.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 9.75F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgCliente.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgCliente.Size = new System.Drawing.Size(664, 113);
+            this.dtgCliente.TabIndex = 4;
+            this.dtgCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCliente_CellContentClick);
+            // 
             // GestionarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(700, 250);
+            this.ClientSize = new System.Drawing.Size(700, 347);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
@@ -347,6 +376,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDesplazamiento)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,8 +394,6 @@
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIC;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox minimizar;
         private System.Windows.Forms.PictureBox cerrar;
@@ -378,5 +407,7 @@
         private System.Windows.Forms.TextBox txtClaveacceso;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNUsuario;
+        private System.Windows.Forms.GroupBox groupBox3;
+        public System.Windows.Forms.DataGridView dtgCliente;
     }
 }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -45,9 +47,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtIGT = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtgGastos = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.llblX = new System.Windows.Forms.LinkLabel();
+            this.dtgGastos = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgGastos)).BeginInit();
@@ -222,15 +224,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gastos";
             // 
-            // dtgGastos
-            // 
-            this.dtgGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgGastos.Location = new System.Drawing.Point(6, 22);
-            this.dtgGastos.Name = "dtgGastos";
-            this.dtgGastos.Size = new System.Drawing.Size(539, 259);
-            this.dtgGastos.TabIndex = 0;
-            this.dtgGastos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgGastos_CellContentClick);
-            // 
             // llblX
             // 
             this.llblX.ActiveLinkColor = System.Drawing.Color.Red;
@@ -242,6 +235,39 @@
             this.llblX.TabStop = true;
             this.llblX.Text = "x";
             this.llblX.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblX_LinkClicked);
+            // 
+            // dtgGastos
+            // 
+            this.dtgGastos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgGastos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgGastos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.dtgGastos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgGastos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgGastos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgGastos.ColumnHeadersHeight = 25;
+            this.dtgGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgGastos.EnableHeadersVisualStyles = false;
+            this.dtgGastos.GridColor = System.Drawing.Color.LightSeaGreen;
+            this.dtgGastos.Location = new System.Drawing.Point(6, 22);
+            this.dtgGastos.Name = "dtgGastos";
+            this.dtgGastos.RowHeadersVisible = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 9.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgGastos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgGastos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgGastos.Size = new System.Drawing.Size(539, 259);
+            this.dtgGastos.TabIndex = 4;
+            this.dtgGastos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgGastos_CellContentClick);
             // 
             // Gastos
             // 
@@ -284,8 +310,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIGT;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dtgGastos;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.LinkLabel llblX;
+        public System.Windows.Forms.DataGridView dtgGastos;
     }
 }

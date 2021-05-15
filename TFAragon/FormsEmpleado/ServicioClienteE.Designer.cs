@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbCliente = new System.Windows.Forms.ComboBox();
             this.cbServicios = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtCosto = new System.Windows.Forms.TextBox();
@@ -43,9 +46,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtgSClientes = new System.Windows.Forms.DataGridView();
             this.llblX = new System.Windows.Forms.LinkLabel();
-            this.cbCliente = new System.Windows.Forms.ComboBox();
+            this.dtgSClientes = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSClientes)).BeginInit();
@@ -99,6 +101,14 @@
             this.groupBox2.Size = new System.Drawing.Size(551, 120);
             this.groupBox2.TabIndex = 56;
             this.groupBox2.TabStop = false;
+            // 
+            // cbCliente
+            // 
+            this.cbCliente.FormattingEnabled = true;
+            this.cbCliente.Location = new System.Drawing.Point(18, 38);
+            this.cbCliente.Name = "cbCliente";
+            this.cbCliente.Size = new System.Drawing.Size(123, 23);
+            this.cbCliente.TabIndex = 62;
             // 
             // cbServicios
             // 
@@ -214,15 +224,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Servicios-Clientes";
             // 
-            // dtgSClientes
-            // 
-            this.dtgSClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgSClientes.Location = new System.Drawing.Point(6, 17);
-            this.dtgSClientes.Name = "dtgSClientes";
-            this.dtgSClientes.Size = new System.Drawing.Size(539, 266);
-            this.dtgSClientes.TabIndex = 0;
-            this.dtgSClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgSClientes_CellContentClick);
-            // 
             // llblX
             // 
             this.llblX.ActiveLinkColor = System.Drawing.Color.Red;
@@ -235,13 +236,38 @@
             this.llblX.Text = "x";
             this.llblX.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblX_LinkClicked);
             // 
-            // cbCliente
+            // dtgSClientes
             // 
-            this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(18, 38);
-            this.cbCliente.Name = "cbCliente";
-            this.cbCliente.Size = new System.Drawing.Size(123, 23);
-            this.cbCliente.TabIndex = 62;
+            this.dtgSClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgSClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgSClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.dtgSClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgSClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgSClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgSClientes.ColumnHeadersHeight = 25;
+            this.dtgSClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgSClientes.EnableHeadersVisualStyles = false;
+            this.dtgSClientes.GridColor = System.Drawing.Color.LightSeaGreen;
+            this.dtgSClientes.Location = new System.Drawing.Point(6, 22);
+            this.dtgSClientes.Name = "dtgSClientes";
+            this.dtgSClientes.RowHeadersVisible = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 9.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgSClientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgSClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgSClientes.Size = new System.Drawing.Size(539, 259);
+            this.dtgSClientes.TabIndex = 6;
+            this.dtgSClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgSClientes_CellContentClick);
             // 
             // ServicioClienteE
             // 
@@ -283,8 +309,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dtgSClientes;
         private System.Windows.Forms.LinkLabel llblX;
         private System.Windows.Forms.ComboBox cbCliente;
+        public System.Windows.Forms.DataGridView dtgSClientes;
     }
 }

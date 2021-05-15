@@ -18,6 +18,7 @@ namespace TFAragon
         {
             InitializeComponent();
         }
+        string idC;
         /*Sentencias sql*/
         static string conn = "SERVER = b6uzer3uyljskeemi0nr-mysql.services.clever-cloud.com; PORT=3306;DATABASE=b6uzer3uyljskeemi0nr;UID=uxbxj6okoaaumlr0;PWD=tZ5XuHvRCMFXxppdCXIU;";
         MySqlConnection cn = new MySqlConnection(conn);
@@ -98,20 +99,26 @@ namespace TFAragon
             ExpedienteCliente obj = new ExpedienteCliente();
             try
             {
-            obj.ICexp = txtIC.Text;
-            obj.Show();
-            this.Hide();
+                if (lblCliente.Text != "")
+                {
+                    obj.ICexp = idC;
+                    obj.Show();
+                    this.Hide();
+                }
+                else
+                    MessageBox.Show("Por favor seleccione un cliente");
             }
             catch
             {
-                MessageBox.Show("Por favor ingrese el identificador del cliente");
+                MessageBox.Show("Por favor seleccione un cliente");
             }
             
         }
 
         private void dtgClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtIC.Text = dtgClientes.CurrentRow.Cells[0].Value.ToString();
+            idC = dtgClientes.CurrentRow.Cells[0].Value.ToString();
+            lblCliente.Text = dtgClientes.CurrentRow.Cells[1].Value.ToString() +" " + dtgClientes.CurrentRow.Cells[2].Value.ToString();
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)

@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.btnGestionar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnDetalle = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtgClientes = new System.Windows.Forms.DataGridView();
@@ -38,11 +41,10 @@
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.barDesplazamiento = new System.Windows.Forms.PictureBox();
-            this.btnDetalle = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtIC = new System.Windows.Forms.TextBox();
             this.btnExpediente = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblCliente = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgClientes)).BeginInit();
@@ -88,6 +90,20 @@
             this.groupBox2.TabIndex = 35;
             this.groupBox2.TabStop = false;
             // 
+            // btnDetalle
+            // 
+            this.btnDetalle.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalle.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDetalle.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnDetalle.Location = new System.Drawing.Point(195, 79);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(75, 50);
+            this.btnDetalle.TabIndex = 39;
+            this.btnDetalle.Text = "Detalle";
+            this.btnDetalle.UseVisualStyleBackColor = false;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
+            // 
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.DarkCyan;
@@ -115,9 +131,33 @@
             // 
             // dtgClientes
             // 
-            this.dtgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.dtgClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgClientes.ColumnHeadersHeight = 25;
+            this.dtgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgClientes.EnableHeadersVisualStyles = false;
+            this.dtgClientes.GridColor = System.Drawing.Color.LightSeaGreen;
             this.dtgClientes.Location = new System.Drawing.Point(6, 17);
             this.dtgClientes.Name = "dtgClientes";
+            this.dtgClientes.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 9.75F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgClientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgClientes.Size = new System.Drawing.Size(664, 174);
             this.dtgClientes.TabIndex = 0;
             this.dtgClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgClientes_CellContentClick);
@@ -171,37 +211,16 @@
             this.barDesplazamiento.MouseMove += new System.Windows.Forms.MouseEventHandler(this.barDesplazamiento_MouseMove);
             this.barDesplazamiento.MouseUp += new System.Windows.Forms.MouseEventHandler(this.barDesplazamiento_MouseUp);
             // 
-            // btnDetalle
-            // 
-            this.btnDetalle.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalle.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
-            this.btnDetalle.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnDetalle.Location = new System.Drawing.Point(195, 79);
-            this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(75, 50);
-            this.btnDetalle.TabIndex = 39;
-            this.btnDetalle.Text = "Detalle";
-            this.btnDetalle.UseVisualStyleBackColor = false;
-            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(98, 112);
+            this.label1.Location = new System.Drawing.Point(25, 112);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 15);
+            this.label1.Size = new System.Drawing.Size(56, 15);
             this.label1.TabIndex = 37;
-            this.label1.Text = "IC";
-            // 
-            // txtIC
-            // 
-            this.txtIC.Location = new System.Drawing.Point(101, 132);
-            this.txtIC.Name = "txtIC";
-            this.txtIC.Size = new System.Drawing.Size(123, 23);
-            this.txtIC.TabIndex = 36;
+            this.label1.Text = "Cliente :";
             // 
             // btnExpediente
             // 
@@ -219,15 +238,25 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lblCliente);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.btnExpediente);
-            this.groupBox3.Controls.Add(this.txtIC);
             this.groupBox3.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox3.Location = new System.Drawing.Point(357, 88);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(331, 197);
             this.groupBox3.TabIndex = 36;
             this.groupBox3.TabStop = false;
+            // 
+            // lblCliente
+            // 
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.BackColor = System.Drawing.Color.Transparent;
+            this.lblCliente.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.Location = new System.Drawing.Point(87, 112);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(0, 15);
+            this.lblCliente.TabIndex = 39;
             // 
             // Clientes
             // 
@@ -276,8 +305,8 @@
         public System.Windows.Forms.DataGridView dtgClientes;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIC;
         private System.Windows.Forms.Button btnExpediente;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblCliente;
     }
 }

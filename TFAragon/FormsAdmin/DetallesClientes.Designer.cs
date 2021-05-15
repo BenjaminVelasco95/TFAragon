@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.cerrar = new System.Windows.Forms.PictureBox();
@@ -58,12 +60,12 @@
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtgFichaTecnica = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnMod = new System.Windows.Forms.Button();
             this.btnDell = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.dtgFichaTecnica = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDesplazamiento)).BeginInit();
@@ -381,15 +383,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ficha Tecnica";
             // 
-            // dtgFichaTecnica
-            // 
-            this.dtgFichaTecnica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgFichaTecnica.Location = new System.Drawing.Point(6, 22);
-            this.dtgFichaTecnica.Name = "dtgFichaTecnica";
-            this.dtgFichaTecnica.Size = new System.Drawing.Size(664, 200);
-            this.dtgFichaTecnica.TabIndex = 0;
-            this.dtgFichaTecnica.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgFichaTecnica_CellContentClick);
-            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.DarkCyan;
@@ -460,6 +453,39 @@
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // dtgFichaTecnica
+            // 
+            this.dtgFichaTecnica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgFichaTecnica.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgFichaTecnica.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.dtgFichaTecnica.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgFichaTecnica.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgFichaTecnica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgFichaTecnica.ColumnHeadersHeight = 25;
+            this.dtgFichaTecnica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgFichaTecnica.EnableHeadersVisualStyles = false;
+            this.dtgFichaTecnica.GridColor = System.Drawing.Color.LightSeaGreen;
+            this.dtgFichaTecnica.Location = new System.Drawing.Point(6, 22);
+            this.dtgFichaTecnica.Name = "dtgFichaTecnica";
+            this.dtgFichaTecnica.RowHeadersVisible = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 9.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgFichaTecnica.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgFichaTecnica.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgFichaTecnica.Size = new System.Drawing.Size(664, 200);
+            this.dtgFichaTecnica.TabIndex = 1;
+            this.dtgFichaTecnica.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgFichaTecnica_CellContentClick);
+            // 
             // DetallesClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -517,7 +543,6 @@
         private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dtgFichaTecnica;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnMod;
         private System.Windows.Forms.Button btnDell;
@@ -532,5 +557,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.ComboBox cbCliente;
+        public System.Windows.Forms.DataGridView dtgFichaTecnica;
     }
 }

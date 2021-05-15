@@ -18,6 +18,18 @@ namespace TFAragon
         {
             InitializeComponent();
         }
+        string idC;
+        private DataTable llenarGrid()
+        {
+            cn.Open();
+            DataTable dt = new DataTable();
+            string llenar = "SELECT * FROM cliente";
+            MySqlCommand cmd = new MySqlCommand(llenar, cn);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            da.Fill(dt);
+            cn.Close();
+            return dt;
+        }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -67,7 +79,7 @@ namespace TFAragon
             {
                 cn.Open();
                 cmd.Connection = cn;
-                cmd.CommandText = ("INSERT INTO `cliente`(`IC`, `nombre`, `apellidos`, `telefono`, `direccion`, `usuarioacceso`, `passwordacceso`) VALUES ('"+txtIC.Text+"','"+txtNombre.Text+"','"+txtApellido.Text+"','"+txtTelefono.Text+"','"+txtDireccion.Text+"','"+txtNUsuario.Text+"','"+txtClaveacceso.Text+"');");
+                cmd.CommandText = ("INSERT INTO `cliente`(`nombre`, `apellidos`, `telefono`, `direccion`, `usuarioacceso`, `passwordacceso`) VALUES ('"+txtNombre.Text+"','"+txtApellido.Text+"','"+txtTelefono.Text+"','"+txtDireccion.Text+"','"+txtNUsuario.Text+"','"+txtClaveacceso.Text+"');");
                 MySqlDataReader dr = cmd.ExecuteReader();
                 MessageBox.Show("Se ah agregado con Exito");
                 cn.Close();
@@ -88,7 +100,7 @@ namespace TFAragon
             {
                 cn.Open();
                 cmd.Connection = cn;
-                cmd.CommandText = ("UPDATE cliente SET nombre='" + txtNombre.Text + "', apellidos='" + txtApellido.Text + "', telefono='" + txtTelefono.Text + "', direccion='" + txtDireccion.Text + "' WHERE IC ='" + txtIC.Text + "',`usuarioacceso`='"+txtNUsuario.Text+"',`passwordacceso`='"+txtClaveacceso.Text+"';");
+                cmd.CommandText = ("UPDATE cliente SET nombre='" + txtNombre.Text + "', apellidos='" + txtApellido.Text + "', telefono='" + txtTelefono.Text + "', direccion='" + txtDireccion.Text + "' ,`usuarioacceso`='" + txtNUsuario.Text + "',`passwordacceso`='" + txtClaveacceso.Text + "' WHERE IC ='" + idC + "';");
                 MySqlDataReader dr = cmd.ExecuteReader();
                 MessageBox.Show("Se ah Modificado con Exito");
                 cn.Close();
@@ -109,7 +121,7 @@ namespace TFAragon
             {
                 cn.Open();
                 cmd.Connection = cn;
-                cmd.CommandText = ("DELETE FROM cliente WHERE IC = '" + txtIC.Text + "'");
+                cmd.CommandText = ("DELETE FROM cliente WHERE IC = '" + idC + "'");
                 MySqlDataReader dr = cmd.ExecuteReader();
                 MessageBox.Show("Se ah Eliminado con Exito");
                 cn.Close();
@@ -124,7 +136,18 @@ namespace TFAragon
 
         private void GestionarClientes_Load(object sender, EventArgs e)
         {
-            txtIC.Text = "TFC";
+            dtgCliente.DataSource = llenarGrid();
+        }
+
+        private void dtgCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idC = dtgCliente.CurrentRow.Cells[0].Value.ToString();
+            txtNombre.Text = dtgCliente.CurrentRow.Cells[1].Value.ToString();
+            txtApellido.Text = dtgCliente.CurrentRow.Cells[2].Value.ToString();
+            txtTelefono.Text = dtgCliente.CurrentRow.Cells[3].Value.ToString();
+            txtDireccion.Text = dtgCliente.CurrentRow.Cells[4].Value.ToString();
+            txtNUsuario.Text = dtgCliente.CurrentRow.Cells[5].Value.ToString();
+            txtClaveacceso.Text = dtgCliente.CurrentRow.Cells[6].Value.ToString();
         }
     }
 }

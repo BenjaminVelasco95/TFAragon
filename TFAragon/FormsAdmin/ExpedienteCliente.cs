@@ -42,7 +42,7 @@ namespace TFAragon
             txtMedicacion.Text = "";
             txtObservaciones.Text = "";
             txtFecha.Text = "";
-            txtFecha.Text = DateTime.Now.ToString("yy/MM/dd HH:mm:ss");
+            txtFecha.Text = DateTime.Now.ToString("yy/MM/dd");
             txtIEX.Text = "TFEX";
         }
         //////////////////////////////////////////////////////////////////////////////////////////////
@@ -91,7 +91,7 @@ namespace TFAragon
         {
             dtgExClient.DataSource = llenar_Grid();
             timer1.Enabled = true;
-            txtFecha.Text = DateTime.Now.ToString("yy/MM/dd HH:mm:ss");
+            txtFecha.Text = DateTime.Now.ToString("yy/MM/dd");
             txtIEX.Text = "TFEX";
            
         }

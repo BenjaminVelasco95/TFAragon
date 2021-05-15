@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -49,9 +51,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtIPG = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtgPagos = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.llblX = new System.Windows.Forms.LinkLabel();
+            this.dtgPagos = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPagos)).BeginInit();
@@ -267,15 +269,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cobros Realizados";
             // 
-            // dtgPagos
-            // 
-            this.dtgPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPagos.Location = new System.Drawing.Point(6, 17);
-            this.dtgPagos.Name = "dtgPagos";
-            this.dtgPagos.Size = new System.Drawing.Size(539, 266);
-            this.dtgPagos.TabIndex = 0;
-            this.dtgPagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPagos_CellContentClick);
-            // 
             // llblX
             // 
             this.llblX.ActiveLinkColor = System.Drawing.Color.Red;
@@ -287,6 +280,39 @@
             this.llblX.TabStop = true;
             this.llblX.Text = "x";
             this.llblX.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblX_LinkClicked);
+            // 
+            // dtgPagos
+            // 
+            this.dtgPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgPagos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgPagos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.dtgPagos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgPagos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgPagos.ColumnHeadersHeight = 25;
+            this.dtgPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgPagos.EnableHeadersVisualStyles = false;
+            this.dtgPagos.GridColor = System.Drawing.Color.LightSeaGreen;
+            this.dtgPagos.Location = new System.Drawing.Point(6, 22);
+            this.dtgPagos.Name = "dtgPagos";
+            this.dtgPagos.RowHeadersVisible = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 9.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgPagos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgPagos.Size = new System.Drawing.Size(539, 259);
+            this.dtgPagos.TabIndex = 5;
+            this.dtgPagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPagos_CellContentClick);
             // 
             // PagosE
             // 
@@ -333,8 +359,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIPG;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dtgPagos;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.LinkLabel llblX;
+        public System.Windows.Forms.DataGridView dtgPagos;
     }
 }

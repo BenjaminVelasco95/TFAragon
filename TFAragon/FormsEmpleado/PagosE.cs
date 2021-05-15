@@ -28,7 +28,7 @@ namespace TFAragon.FomormsEmpleado
         {
             cn.Open();
             DataTable dt = new DataTable();
-            string llenar = "SELECT IE, nombre FROM empleados;";
+            string llenar = "SELECT IE, nombre FROM empleados where rol ='empleado';";
             MySqlCommand cmd = new MySqlCommand(llenar, cn);
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             da.Fill(dt);

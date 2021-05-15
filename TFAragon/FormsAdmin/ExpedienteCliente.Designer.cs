@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.cerrar = new System.Windows.Forms.PictureBox();
@@ -133,28 +136,30 @@
             this.groupBox2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(11, 78);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(393, 410);
+            this.groupBox2.Size = new System.Drawing.Size(453, 410);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
             // 
             // txtObservaciones
             // 
             this.txtObservaciones.Location = new System.Drawing.Point(6, 91);
+            this.txtObservaciones.MaxLength = 10000;
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(381, 313);
+            this.txtObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtObservaciones.Size = new System.Drawing.Size(441, 313);
             this.txtObservaciones.TabIndex = 39;
             // 
             // txtMedicacion
             // 
-            this.txtMedicacion.Location = new System.Drawing.Point(264, 33);
+            this.txtMedicacion.Location = new System.Drawing.Point(324, 33);
             this.txtMedicacion.Name = "txtMedicacion";
             this.txtMedicacion.Size = new System.Drawing.Size(123, 23);
             this.txtMedicacion.TabIndex = 38;
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(135, 33);
+            this.txtFecha.Location = new System.Drawing.Point(163, 33);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(123, 23);
             this.txtFecha.TabIndex = 36;
@@ -175,7 +180,7 @@
             this.labelapellido.AutoSize = true;
             this.labelapellido.BackColor = System.Drawing.Color.Transparent;
             this.labelapellido.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelapellido.Location = new System.Drawing.Point(261, 13);
+            this.labelapellido.Location = new System.Drawing.Point(321, 13);
             this.labelapellido.Name = "labelapellido";
             this.labelapellido.Size = new System.Drawing.Size(75, 15);
             this.labelapellido.TabIndex = 33;
@@ -186,7 +191,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(132, 13);
+            this.label2.Location = new System.Drawing.Point(160, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 15);
             this.label2.TabIndex = 31;
@@ -271,18 +276,53 @@
             // 
             this.groupBox1.Controls.Add(this.dtgExClient);
             this.groupBox1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(410, 78);
+            this.groupBox1.Location = new System.Drawing.Point(470, 78);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(289, 410);
+            this.groupBox1.Size = new System.Drawing.Size(229, 410);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
             // 
             // dtgExClient
             // 
-            this.dtgExClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgExClient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgExClient.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgExClient.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.dtgExClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgExClient.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dtgExClient.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgExClient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgExClient.ColumnHeadersHeight = 25;
+            this.dtgExClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgExClient.EnableHeadersVisualStyles = false;
+            this.dtgExClient.GridColor = System.Drawing.Color.LightSeaGreen;
             this.dtgExClient.Location = new System.Drawing.Point(6, 17);
             this.dtgExClient.Name = "dtgExClient";
-            this.dtgExClient.Size = new System.Drawing.Size(277, 387);
+            this.dtgExClient.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgExClient.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgExClient.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgExClient.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dtgExClient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgExClient.ShowEditingIcon = false;
+            this.dtgExClient.Size = new System.Drawing.Size(217, 387);
             this.dtgExClient.TabIndex = 0;
             this.dtgExClient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgExClient_CellContentClick);
             // 
