@@ -35,6 +35,18 @@ namespace TFAragon.FomormsEmpleado
             return dt;
         }
 
+        private DataTable CombBoxIC()
+        {
+            cn.Open();
+            DataTable dt = new DataTable();
+            string llenar = "SELECT IC, nombre FROM cliente;";
+            MySqlCommand cmd = new MySqlCommand(llenar, cn);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            da.Fill(dt);
+            cn.Close();
+            return dt;
+        }
+
         private DataTable llenar_Grid()
         {
             cn.Open();
@@ -49,23 +61,12 @@ namespace TFAragon.FomormsEmpleado
 
         private void limpForm()
         {
-            txtIC.Text = "";
             txtTTranscurrido.Text = "";
             txtDuracion.Text = "";
             txtDescrip.Text = "";
             txtCosto.Text = "";
-            txtIC.Text = "TFC";
         }
         /********************botones de insercion de datos********************/
-        private void btnDell_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnMod_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -73,7 +74,7 @@ namespace TFAragon.FomormsEmpleado
             {
                 cn.Open();
                 cmd.Connection = cn;
-                cmd.CommandText = ("INSERT INTO `servicios_cliente`(`IC`, `ISER`, `transcurrido`, `duracion`, `descripcion`, `costo`) VALUES ('" + txtIC.Text + "','" + cbServicios.SelectedValue.ToString() + "','" + txtTTranscurrido.Text + "','" + txtDuracion.Text + "','" + txtDescrip.Text + "','" + txtCosto.Text + "');");
+                cmd.CommandText = ("INSERT INTO `servicios_cliente`(`IC`, `ISER`, `transcurrido`, `duracion`, `descripcion`, `costo`) VALUES ('" + cbCliente.SelectedValue.ToString() + "','" + cbServicios.SelectedValue.ToString() + "','" + txtTTranscurrido.Text + "','" + txtDuracion.Text + "','" + txtDescrip.Text + "','" + txtCosto.Text + "');");
                 MySqlDataReader dr = cmd.ExecuteReader();
                 MessageBox.Show("Se ah agregado con Exito");
                 cn.Close();
@@ -114,13 +115,52 @@ namespace TFAragon.FomormsEmpleado
             }
             catch
             {
-                MessageBox.Show("Registro Inexistente");
+                
             }
         }
 
         private void dtgSClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtIC.Text = dtgSClientes.CurrentRow.Cells[0].Value.ToString();
+            string idIC = dtgSClientes.CurrentRow.Cells[1].Value.ToString(), idISER = dtgSClientes.CurrentRow.Cells[2].Value.ToString();
+            try
+            {
+                cn.Open();
+                MySqlConnection conectanos = new MySqlConnection();
+                cmd.Connection = cn;
+
+                cmd.CommandText = ("select nombre from cliente where IC ='"+idIC+"';");
+                MySqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    cbCliente.Text = dr[0].ToString();
+                }
+
+                cn.Close();
+            }
+            catch
+            {
+            }
+
+            try
+            {
+                cn.Open();
+                MySqlConnection conectanos = new MySqlConnection();
+                cmd.Connection = cn;
+
+                cmd.CommandText = ("select nombre from servicios_clinica where ISER ='" + idISER  + "';");
+                MySqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    cbServicios.Text = dr[0].ToString();
+                }
+
+                cn.Close();
+            }
+            catch
+            {
+            }
+
+            
             txtTTranscurrido.Text = dtgSClientes.CurrentRow.Cells[2].Value.ToString();
             txtDuracion.Text = dtgSClientes.CurrentRow.Cells[3].Value.ToString();
             txtDescrip.Text = dtgSClientes.CurrentRow.Cells[4].Value.ToString();
@@ -133,8 +173,11 @@ namespace TFAragon.FomormsEmpleado
             cbServicios.DataSource = dt;
             cbServicios.ValueMember = "ISER";
             cbServicios.DisplayMember = "nombre";
+            dt = CombBoxIC();
+            cbCliente.DataSource = dt;
+            cbCliente.ValueMember = "IC";
+            cbCliente.DisplayMember = "nombre";
             dtgSClientes.DataSource = llenar_Grid();
-            txtIC.Text = "TFC";
         }
 
         private void llblX_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -38,6 +38,7 @@
             this.btnDell = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbServicios = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtCosto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,10 +49,9 @@
             this.txtTTranscurrido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtIC = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtgSClientes = new System.Windows.Forms.DataGridView();
-            this.cbServicios = new System.Windows.Forms.ComboBox();
+            this.cbClientes = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDesplazamiento)).BeginInit();
@@ -180,6 +180,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbClientes);
             this.groupBox2.Controls.Add(this.cbServicios);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtCosto);
@@ -191,13 +192,21 @@
             this.groupBox2.Controls.Add(this.txtTTranscurrido);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtIC);
             this.groupBox2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(12, 78);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(676, 120);
             this.groupBox2.TabIndex = 56;
             this.groupBox2.TabStop = false;
+            // 
+            // cbServicios
+            // 
+            this.cbServicios.FormattingEnabled = true;
+            this.cbServicios.Location = new System.Drawing.Point(147, 40);
+            this.cbServicios.Name = "cbServicios";
+            this.cbServicios.Size = new System.Drawing.Size(123, 23);
+            this.cbServicios.TabIndex = 40;
+            this.cbServicios.SelectedIndexChanged += new System.EventHandler(this.cbServicios_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -293,13 +302,6 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "IC";
             // 
-            // txtIC
-            // 
-            this.txtIC.Location = new System.Drawing.Point(18, 40);
-            this.txtIC.Name = "txtIC";
-            this.txtIC.Size = new System.Drawing.Size(123, 23);
-            this.txtIC.TabIndex = 0;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtgSClientes);
@@ -320,14 +322,13 @@
             this.dtgSClientes.TabIndex = 0;
             this.dtgSClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgSClientes_CellContentClick);
             // 
-            // cbServicios
+            // cbClientes
             // 
-            this.cbServicios.FormattingEnabled = true;
-            this.cbServicios.Location = new System.Drawing.Point(147, 40);
-            this.cbServicios.Name = "cbServicios";
-            this.cbServicios.Size = new System.Drawing.Size(123, 23);
-            this.cbServicios.TabIndex = 40;
-            this.cbServicios.SelectedIndexChanged += new System.EventHandler(this.cbServicios_SelectedIndexChanged);
+            this.cbClientes.FormattingEnabled = true;
+            this.cbClientes.Location = new System.Drawing.Point(18, 40);
+            this.cbClientes.Name = "cbClientes";
+            this.cbClientes.Size = new System.Drawing.Size(123, 23);
+            this.cbClientes.TabIndex = 41;
             // 
             // ServicioCliente
             // 
@@ -385,9 +386,9 @@
         private System.Windows.Forms.TextBox txtTTranscurrido;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIC;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dtgSClientes;
         private System.Windows.Forms.ComboBox cbServicios;
+        private System.Windows.Forms.ComboBox cbClientes;
     }
 }

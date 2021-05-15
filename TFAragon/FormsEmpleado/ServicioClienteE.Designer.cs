@@ -42,10 +42,10 @@
             this.txtTTranscurrido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtIC = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtgSClientes = new System.Windows.Forms.DataGridView();
             this.llblX = new System.Windows.Forms.LinkLabel();
+            this.cbCliente = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSClientes)).BeginInit();
@@ -81,6 +81,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbCliente);
             this.groupBox2.Controls.Add(this.cbServicios);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtCosto);
@@ -92,7 +93,6 @@
             this.groupBox2.Controls.Add(this.txtTTranscurrido);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtIC);
             this.groupBox2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(12, 43);
             this.groupBox2.Name = "groupBox2";
@@ -203,13 +203,6 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "IC";
             // 
-            // txtIC
-            // 
-            this.txtIC.Location = new System.Drawing.Point(18, 40);
-            this.txtIC.Name = "txtIC";
-            this.txtIC.Size = new System.Drawing.Size(123, 23);
-            this.txtIC.TabIndex = 0;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtgSClientes);
@@ -241,6 +234,14 @@
             this.llblX.TabStop = true;
             this.llblX.Text = "x";
             this.llblX.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblX_LinkClicked);
+            // 
+            // cbCliente
+            // 
+            this.cbCliente.FormattingEnabled = true;
+            this.cbCliente.Location = new System.Drawing.Point(18, 38);
+            this.cbCliente.Name = "cbCliente";
+            this.cbCliente.Size = new System.Drawing.Size(123, 23);
+            this.cbCliente.TabIndex = 62;
             // 
             // ServicioClienteE
             // 
@@ -281,9 +282,9 @@
         private System.Windows.Forms.TextBox txtTTranscurrido;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIC;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dtgSClientes;
         private System.Windows.Forms.LinkLabel llblX;
+        private System.Windows.Forms.ComboBox cbCliente;
     }
 }

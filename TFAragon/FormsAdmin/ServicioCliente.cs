@@ -18,12 +18,25 @@ namespace TFAragon
         {
             InitializeComponent();
         }
+        int iSC;
         static string conn = "SERVER = b6uzer3uyljskeemi0nr-mysql.services.clever-cloud.com; PORT=3306;DATABASE=b6uzer3uyljskeemi0nr;UID=uxbxj6okoaaumlr0;PWD=tZ5XuHvRCMFXxppdCXIU;";
         MySqlConnection cn = new MySqlConnection(conn);
         MySqlCommand cmd = new MySqlCommand();
         MySqlConnection conectanos = new MySqlConnection();
 
-        private DataTable CombBox()
+        private DataTable CombBoxIC()
+        {
+            cn.Open();
+            DataTable dt = new DataTable();
+            string llenar = "SELECT IC, nombre FROM cliente;";
+            MySqlCommand cmd = new MySqlCommand(llenar, cn);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            da.Fill(dt);
+            cn.Close();
+            return dt;
+        }
+
+        private DataTable CombBoxIser()
         {
             cn.Open();
             DataTable dt = new DataTable();
@@ -49,12 +62,10 @@ namespace TFAragon
 
         private void limpForm()
         {
-            txtIC.Text = "";
             txtTTranscurrido.Text = "";
             txtDuracion.Text = "";
             txtDescrip.Text = "";
             txtCosto.Text = "";
-            txtIC.Text = "TFC";
         }
         ////////////////////////////////////////////////////////////////////////////////////
         /*Barra de desplazamiento superior*/
@@ -101,12 +112,15 @@ namespace TFAragon
 
         private void ServicioCliente_Load(object sender, EventArgs e)
         {
-            DataTable dt = CombBox();
+            DataTable dt = CombBoxIser();
             cbServicios.DataSource = dt;
             cbServicios.ValueMember = "ISER";
             cbServicios.DisplayMember = "nombre";
+            dt = CombBoxIC();
+            cbClientes.DataSource = dt;
+            cbClientes.ValueMember = "IC";
+            cbClientes.DisplayMember = "nombre";
             dtgSClientes.DataSource = llenar_Grid();
-            txtIC.Text = "TFC";
         }
         ////////////////////////////////////////////////////////////////////////////////////
         private void btnAdd_Click(object sender, EventArgs e)
@@ -115,7 +129,7 @@ namespace TFAragon
             {
                 cn.Open();
                 cmd.Connection = cn;
-                cmd.CommandText = ("INSERT INTO `servicios_cliente`(`IC`, `ISER`, `transcurrido`, `duracion`, `descripcion`, `costo`) VALUES ('" + txtIC.Text + "','" + cbServicios.SelectedValue.ToString() + "','" + txtTTranscurrido.Text + "','" + txtDuracion.Text + "','" + txtDescrip.Text + "','" + txtCosto.Text + "');");
+                cmd.CommandText = ("INSERT INTO `servicios_cliente`(`IC`, `ISER`, `transcurrido`, `duracion`, `descripcion`, `costo`) VALUES ('" + cbClientes.SelectedValue.ToString() + "','" + cbServicios.SelectedValue.ToString() + "','" + txtTTranscurrido.Text + "','" + txtDuracion.Text + "','" + txtDescrip.Text + "','" + txtCosto.Text + "');");
                 MySqlDataReader dr = cmd.ExecuteReader();
                 MessageBox.Show("Se ah agregado con Exito");
                 cn.Close();
@@ -136,7 +150,7 @@ namespace TFAragon
             {
                 cn.Open();
                 cmd.Connection = cn;
-                cmd.CommandText = ("UPDATE `servicios_cliente` SET `ISER`='" + cbServicios.SelectedValue.ToString()  + "',`transcurrido`='" + txtTTranscurrido.Text + "',`duracion`='" + txtDuracion.Text + "',`descripcion`='" + txtDescrip.Text + "',`costo`='" + txtCosto.Text + "' WHERE `IC`='" + txtIC.Text + "';");
+                cmd.CommandText = ("UPDATE `servicios_cliente` SET `ISER`='" + cbServicios.Text + "',`transcurrido`='" + txtTTranscurrido.Text + "',`duracion`='" + txtDuracion.Text + "',`descripcion`='" + txtDescrip.Text + "',`costo`='" + txtCosto.Text + "' WHERE `IC`='" + cbClientes.SelectedValue.ToString() + "';");
                 MySqlDataReader dr = cmd.ExecuteReader();
                 MessageBox.Show("Se ah Modificado con Exito");
                 cn.Close();
@@ -156,7 +170,7 @@ namespace TFAragon
             {
                 cn.Open();
                 cmd.Connection = cn;
-                cmd.CommandText = ("DELETE FROM `servicios_cliente` WHERE `IC`='" + txtIC.Text + "' AND `ISER`='"+cbServicios+"';");
+                cmd.CommandText = ("DELETE FROM `servicios_cliente` WHERE `ISC`='" + iSC.ToString() + "';");
                 MySqlDataReader dr = cmd.ExecuteReader();
                 MessageBox.Show("Se ah Eliminado con Exito");
                 cn.Close();
@@ -181,11 +195,13 @@ namespace TFAragon
         ////////////////////////////////////////////////////////////////////////////////////
         private void dtgSClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtIC.Text = dtgSClientes.CurrentRow.Cells[0].Value.ToString();
-            txtTTranscurrido.Text = dtgSClientes.CurrentRow.Cells[2].Value.ToString();
-            txtDuracion.Text = dtgSClientes.CurrentRow.Cells[3].Value.ToString();
-            txtDescrip.Text = dtgSClientes.CurrentRow.Cells[4].Value.ToString();
-            txtCosto.Text = dtgSClientes.CurrentRow.Cells[5].Value.ToString();
+            iSC = Convert.ToInt32(dtgSClientes.CurrentRow.Cells[0].Value);
+            cbServicios.Text = dtgSClientes.CurrentRow.Cells[2].Value.ToString();
+            cbClientes.Text = dtgSClientes.CurrentRow.Cells[1].Value.ToString();
+            txtTTranscurrido.Text = dtgSClientes.CurrentRow.Cells[3].Value.ToString();
+            txtDuracion.Text = dtgSClientes.CurrentRow.Cells[4].Value.ToString();
+            txtDescrip.Text = dtgSClientes.CurrentRow.Cells[5].Value.ToString();
+            txtCosto.Text = dtgSClientes.CurrentRow.Cells[6].Value.ToString();
 
         }
 
