@@ -68,3 +68,6 @@ C:\Users\QUESADILLA\Desktop\GIT\TFAragon\TFAragon\obj\Debug\TFAragon.Properties.
 C:\Users\QUESADILLA\Desktop\GIT\TFAragon\TFAragon\obj\Debug\TFAragon.ServiciosClinica.resources
 C:\Users\QUESADILLA\Desktop\GIT\TFAragon\TFAragon\obj\Debug\TFAragon.ServicioCliente.resources
 C:\Users\QUESADILLA\Desktop\GIT\TFAragon\TFAragon\obj\Debug\TFAragon.csproj.GenerateResource.Cache
+C:\Users\QUESADILLA\Desktop\GIT\TFAragon\Sistema Escritorio\TFAragon\bin\Debug\TFAragon.exe.config
+C:\Users\QUESADILLA\Desktop\GIT\TFAragon\Sistema Escritorio\TFAragon\obj\Debug\TFAragon.exe
+C:\Users\QUESADILLA\Desktop\GIT\TFAragon\Sistema Escritorio\TFAragon\obj\Debug\TFAragon.pdb
