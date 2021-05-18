@@ -81,14 +81,14 @@ namespace TFAragon
                 if (dr.Read())
                 {
                     string rol = Convert.ToString(dr[0]);
-                    if (rol == "superadmin")
+                    if (rol == "Administrador")
                     {
                         dsAdmin ver = new dsAdmin();
                         MessageBox.Show("Bienvenido " + Convert.ToString(dr[1]) + " " + Convert.ToString(dr[2]));
                         ver.Show();
                         this.Hide();
                     }
-                    else if (rol== "empleado")
+                    else if (rol== "Empleado")
                     {
                         dsEmpleado ini = new dsEmpleado();
                         MessageBox.Show("Bienvenido " + Convert.ToString(dr[1]) + " " + Convert.ToString(dr[2]));
