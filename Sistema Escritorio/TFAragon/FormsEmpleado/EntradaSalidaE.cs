@@ -60,9 +60,9 @@ namespace TFAragon.FomormsEmpleado
                 dtgES.DataSource = llenar_Grid();
 
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Ah Ocurrido un Error: " + ex.ToString());
+                MessageBox.Show("Aun no has registrado tu entrada hoy");
             }
         }
 
@@ -78,9 +78,9 @@ namespace TFAragon.FomormsEmpleado
                 cn.Close();
                 dtgES.DataSource = llenar_Grid();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Ah Ocurrido un Error: " + ex.ToString());
+                MessageBox.Show("Ya te has registrado Hoy");
             }
         }
 
